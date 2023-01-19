@@ -1,0 +1,3 @@
+INSERT INTO CITY VALUES ('34000', 'Montpellier', 34);
+INSERT INTO CITY VALUES ('30100', 'Ales', 30);
+INSERT INTO CITY VALUES ('28400', 'Nogent-le-Rotrou', 28);
