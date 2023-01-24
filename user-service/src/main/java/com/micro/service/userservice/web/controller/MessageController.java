@@ -16,7 +16,6 @@ public class MessageController {
     @Autowired
     private Sender sender;
 
-
     @GetMapping
     public String sendMessage(@RequestParam Integer workload) {
         return this.sender.send(workload);
