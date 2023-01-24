@@ -17,7 +17,6 @@ public class Sender {
 
     AtomicInteger count = new AtomicInteger(0);
 
-    @Scheduled(fixedDelay = 1000, initialDelay = 500)
     public String send(Integer dots) {
         StringBuilder builder = new StringBuilder("Hello");
         for (int i = 0; i < dots; i++) {
