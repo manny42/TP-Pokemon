@@ -5,8 +5,7 @@ import jakarta.persistence.*;
 @Entity // This tells Hibernate to make a table out of this class
 public class City {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "city_generator")
-    @SequenceGenerator(name = "city_generator", sequenceName = "city_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String postcode;
