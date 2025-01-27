@@ -11,6 +11,6 @@ export class EggServiceService {
   constructor(private httpClient: HttpClient) { }
 
   public test() {
-    return this.httpClient.get('http://localhost:8081/eggs');
+    return this.httpClient.get('http://localhost:40125/eggs');
   }
 }
