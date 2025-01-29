@@ -1,5 +1,6 @@
 package com.micro.service.storeservice.config;
 
+import com.micro.service.storeservice.queue.Receiver;
 import org.springframework.amqp.core.AmqpAdmin;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
@@ -15,27 +16,12 @@ import org.springframework.context.annotation.Configuration;
 public class QueueConfig {
 
     @Bean
-    public ConnectionFactory connectionFactory() {
-        return new CachingConnectionFactory("localhost");
-    }
-
-    @Bean
-    public AmqpAdmin amqpAdmin() {
-        return new RabbitAdmin(connectionFactory());
-    }
-
-    @Bean
-    public RabbitTemplate rabbitTemplate() {
-        return new RabbitTemplate(connectionFactory());
-    }
-
-    @Bean
-    public Queue myQueue() {
+    public Queue hello() {
         return new Queue("hello");
     }
 
     @Bean
-    public MessageConverter messageConverter() {
-        return new SimpleMessageConverter();
+    public Receiver receiver() {
+        return new Receiver();
     }
 }
