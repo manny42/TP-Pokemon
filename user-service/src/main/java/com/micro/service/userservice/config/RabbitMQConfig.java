@@ -13,6 +13,11 @@ public class RabbitMQConfig {
     }
 
     @Bean
+    public Queue goodbye() {
+        return new Queue("goodbye");
+    }
+
+    @Bean
     public Sender sender() {
         return new Sender();
     }

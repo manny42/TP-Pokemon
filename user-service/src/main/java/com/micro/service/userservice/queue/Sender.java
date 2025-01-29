@@ -13,7 +13,10 @@ public class Sender {
     private RabbitTemplate template;
 
     @Autowired
-    private Queue queue;
+    private Queue goodbye;
+
+    @Autowired
+    private Queue hello;
 
     AtomicInteger count = new AtomicInteger(0);
 
@@ -24,7 +27,8 @@ public class Sender {
         }
         builder.append(count.incrementAndGet());
         String message = builder.toString();
-        template.convertAndSend(queue.getName(), message);
+        template.convertAndSend(hello.getName(), message);
+        template.convertAndSend(goodbye.getName(), "Goodbye");
         return " [x] Sent '" + message + "'";
     }
 }
